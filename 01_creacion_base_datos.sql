@@ -60,7 +60,7 @@ CREATE TABLE RECOLECCION (
 );
 
 CREATE TABLE MEDICAMENTO (
-   ID_Medicamento INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Medicamento INT AUTO_INCREMENT PRIMARY KEY,
     ID_Recoleccion INT NOT NULL,
     ID_Disposicion INT NULL,
     Nombre VARCHAR(100) NOT NULL,
@@ -78,25 +78,32 @@ CREATE TABLE MEDICAMENTO (
 INSERT INTO HOGAR_INSTITUCION VALUES
 (1, 'Carlos Ramírez', 'Cra 10 # 25-30', '3001234567', 'carlos@mail.com', 'Zarzal', 4, '2026-06-01'),
 (2, 'María Gómez', 'Calle 8 # 12-45', '3019876543', 'maria@mail.com', 'Zarzal', 3, '2026-06-02'),
-(3, 'Fundación Vida Sana', 'Av. Central # 5-80', '3024567890', 'fundacion@mail.com', 'Zarzal', 15, '2026-06-03');
+(3, 'Fundación Vida Sana', 'Av. Central # 5-80', '3024567890', 'fundacion@mail.com', 'Zarzal', 15, '2026-06-03'),
+(4, 'Juan Pérez', 'Cra 5 # 9-20', '3005551122', 'juan@mail.com', 'Roldanillo', 5, '2026-06-04'),
+(5, 'Institución Verde', 'Calle 30 # 15-10', '3114447788', 'verde@mail.com', 'La Unión', 20, '2026-06-05');
 
 INSERT INTO PUNTO_SEGURO VALUES
 (1, 'Droguería Central', 'Cra 12 # 10-15', 'Zarzal', '08:00-18:00', 'Laura Pérez', 500),
-(2, 'Centro de Salud Norte', 'Calle 20 # 7-40', 'Zarzal', '07:00-16:00', 'Andrés Molina', 800);
+(2, 'Centro de Salud Norte', 'Calle 20 # 7-40', 'Zarzal', '07:00-16:00', 'Andrés Molina', 800),
+(3, 'Punto Ambiental Municipal', 'Av. Principal # 1-50', 'Roldanillo', '08:00-17:00', 'Sandra Ruiz', 600);
 
 INSERT INTO CAMPANA VALUES
 (1, 'Campaña Hogares Seguros', '2026-06-01', '2026-06-30', 'Recolectar medicamentos vencidos en hogares'),
-(2, 'Jornada Ambiental Comunitaria', '2026-07-01', '2026-07-15', 'Promover disposición segura de medicamentos');
+(2, 'Jornada Ambiental Comunitaria', '2026-07-01', '2026-07-15', 'Promover disposición segura de medicamentos'),
+(3, 'Semana de Salud Ambiental', '2026-08-01', '2026-08-10', 'Fortalecer la educación ambiental y sanitaria');
 
 INSERT INTO DISPOSICION_FINAL VALUES
 (1, 'Incineración controlada', 'EcoGestión Ambiental SAS', '2026-06-20', 'CERT-AMB-001'),
-(2, 'Devolución al fabricante', 'Gestor Farma Seguro Ltda.', '2026-07-18', 'CERT-AMB-002');
+(2, 'Devolución al fabricante', 'Gestor Farma Seguro Ltda.', '2026-07-18', 'CERT-AMB-002'),
+(3, 'Desactivación química', 'BioResiduos Colombia SAS', '2026-08-12', 'CERT-AMB-003');
 
 INSERT INTO RECOLECCION VALUES
 (1, 1, 1, 1, '2026-06-05', 8, 'Operador Luis Torres'),
 (2, 2, 1, 1, '2026-06-08', 5, 'Operador Luis Torres'),
 (3, 3, 2, 2, '2026-07-05', 12, 'Operadora Diana Ruiz'),
-(4, 1, 2, NULL, '2026-07-10', 3, 'Operador Juan Castro');
+(4, 1, 2, NULL, '2026-07-10', 3, 'Operador Juan Castro'),
+(5, 4, 3, 2, '2026-07-12', 7, 'Operadora Sandra López'),
+(6, 5, 3, 3, '2026-08-03', 10, 'Operador Felipe Rojas');
 
 INSERT INTO MEDICAMENTO VALUES
 (1, 1, 1, 'Acetaminofén', 'L001', '2025-12-15', 'Pastillas', '500 mg', 'Genfar', 'Tabletas', 3),
@@ -104,4 +111,8 @@ INSERT INTO MEDICAMENTO VALUES
 (3, 2, 1, 'Amoxicilina', 'L003', '2026-06-01', 'Jarabe', '250 mg/5ml', 'La Santé', 'Jarabe', 2),
 (4, 3, 2, 'Loratadina', 'L004', '2026-07-25', 'Pastillas', '10 mg', 'Tecnoquímicas', 'Tabletas', 6),
 (5, 3, 2, 'Diclofenaco', 'L005', '2026-04-30', 'Inyectable', '75 mg', 'Bayer', 'Ampolla', 4),
-(6, 4, NULL, 'Omeprazol', 'L006', '2026-08-10', 'Cápsulas', '20 mg', 'Genfar', 'Cápsulas', 3);
+(6, 4, NULL, 'Omeprazol', 'L006', '2026-08-10', 'Cápsulas', '20 mg', 'Genfar', 'Cápsulas', 3),
+(7, 5, 3, 'Naproxeno', 'L007', '2026-09-10', 'Tabletas', '250 mg', 'MK', 'Tabletas', 4),
+(8, 5, 3, 'Cetirizina', 'L008', '2026-07-30', 'Jarabe', '5 mg/5ml', 'Genfar', 'Jarabe', 3),
+(9, 6, NULL, 'Metformina', 'L009', '2026-11-20', 'Tabletas', '850 mg', 'La Santé', 'Tabletas', 6),
+(10, 6, 3, 'Losartán', 'L010', '2026-03-15', 'Tabletas', '50 mg', 'Tecnoquímicas', 'Tabletas', 4);

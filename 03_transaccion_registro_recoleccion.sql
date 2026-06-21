@@ -1,4 +1,4 @@
--- Transacción para registrar una nueva recolección
+-- Transaccion para registrar una nueva recoleccion
 -- y sus medicamentos asociados
 
 START TRANSACTION;

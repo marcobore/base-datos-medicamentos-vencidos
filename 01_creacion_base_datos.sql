@@ -15,7 +15,7 @@ CREATE TABLE HOGAR_INSTITUCION (
     Direccion VARCHAR(150) NOT NULL,
     Telefono VARCHAR(10),
     Correo VARCHAR(100),
-    Municipio VARCHAR(80) NOT NULL,
+    Municipio VARCHAR(100) NOT NULL,
     Numero_Integrantes INT NOT NULL,
     Fecha_Registro DATE NOT NULL
 );
@@ -24,7 +24,7 @@ CREATE TABLE PUNTO_SEGURO (
     ID_Punto INT PRIMARY KEY,
     Nombre_Punto VARCHAR(100) NOT NULL,
     Direccion_Fisica VARCHAR(150) NOT NULL,
-    Municipio VARCHAR(80) NOT NULL,
+    Municipio VARCHAR(100) NOT NULL,
     Horario_Atencion VARCHAR(50) NOT NULL,
     Responsable VARCHAR(80) NOT NULL,
     Capacidad_Maxima INT NOT NULL
@@ -68,8 +68,8 @@ CREATE TABLE MEDICAMENTO (
     Fecha_Vencimiento DATE NOT NULL,
     Tipo_Farmaco VARCHAR(50) NOT NULL,
     Concentracion VARCHAR(50),
-    Laboratorio VARCHAR(100),
-    Presentacion_Farmaceutica VARCHAR(50),
+    Laboratorio VARCHAR(100) NOT NULL,
+    Presentacion VARCHAR(50) NOT NULL,
     Cantidad INT NOT NULL,
     FOREIGN KEY (ID_Recoleccion) REFERENCES RECOLECCION(ID_Recoleccion),
     FOREIGN KEY (ID_Disposicion) REFERENCES DISPOSICION_FINAL(ID_Disposicion)
